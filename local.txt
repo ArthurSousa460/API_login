@@ -1,0 +1,22 @@
+ let result = {
+        id: req.body.id,
+        name: req.body.name,
+        password: req.body.password,
+        email: req.body.email,
+        cpf: req.body.cpf,
+        phone: req.body.phone,
+        address: req.body.address,
+        city: req.body.city
+    }
+
+    if(result['name'] != undefined && result['password'] != undefined && result['email'] != undefined && result['cpf']!= undefined && result['phone'] != undefined && 
+    result['address']!= undefined && result['city'] != undefined){
+        users.push(result)
+        res.status(201).send('Created')
+    }
+    else{
+        res.status(400).send('Bad request')
+    }
+
+    
+}
